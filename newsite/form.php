@@ -66,7 +66,7 @@ Player 7 Mobile No.: $sub2phone";
 <?php
 if ($_POST['submit']) {
     if (mail ($to, $subject, $body, $from)) {
-        header("Location: success.html");
+        header("Location: http://indoorfootballleague.co.uk/success.html");
     } else {
         echo '<p>Oops! An error occurred. Please go back and try again.</p>';
     }

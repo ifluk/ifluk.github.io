@@ -1,17 +1,24 @@
 /*
-	Tessellate by HTML5 UP
+	Miniport by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 (function($) {
 
-	skel.breakpoints({
-		wide: '(max-width: 1680px)',
-		normal: '(max-width: 1280px)',
-		narrow: '(max-width: 1000px)',
-		mobile: '(max-width: 736px)'
-	});
+	skel
+		.breakpoints({
+			desktop: '(min-width: 737px)',
+			tablet: '(min-width: 737px) and (max-width: 1200px)',
+			mobile: '(max-width: 736px)'
+		})
+		.viewport({
+			breakpoints: {
+				tablet: {
+					width: 1080
+				}
+			}
+		});
 
 	$(function() {
 
@@ -28,19 +35,28 @@
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();
 
+		// Prioritize "important" elements on mobile.
+			skel.on('+mobile -mobile', function() {
+				$.prioritize(
+					'.important\\28 mobile\\29',
+					skel.breakpoint('mobile').active
+				);
+			});
+
 		// CSS polyfills (IE<9).
 			if (skel.vars.IEVersion < 9)
 				$(':last-child').addClass('last-child');
 
-		// Scrolly links.
-			$('.scrolly').scrolly();
+		// Scrolly.
+			$window.load(function() {
 
-		// Prioritize "important" elements on narrow.
-			skel.on('+narrow -narrow', function() {
-				$.prioritize(
-					'.important\\28 narrow\\29',
-					skel.breakpoint('narrow').active
-				);
+				var x = parseInt($('.wrapper').first().css('padding-top')) - 15;
+
+				$('#nav a, .scrolly').scrolly({
+					speed: 1000,
+					offset: x
+				});
+
 			});
 
 	});
