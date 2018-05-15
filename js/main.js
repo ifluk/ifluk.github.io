@@ -30,7 +30,7 @@ $('div.modal').on('show.bs.modal', function() {
 	}
 });
 
-var velocity = 0.1;
+var velocity = 0.25;
 
 function update(){ 
     var pos = $(window).scrollTop(); 
