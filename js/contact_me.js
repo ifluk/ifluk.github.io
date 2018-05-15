@@ -26,9 +26,6 @@ $(function() {
             var p4phone = $("input#p4phone").val();
             var p5name = $("input#p5name").val();
             var p5phone = $("input#p5phone").val();
-            var p6name = $("input#p6name").val();
-            var p6phone = $("input#p6phone").val();
-            var terms = $("input#terms").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
