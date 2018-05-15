@@ -28,6 +28,7 @@ $(function() {
             var p5phone = $("input#p5phone").val();
             var p6name = $("input#p6name").val();
             var p6phone = $("input#p6phone").val();
+            var terms = $("input#terms").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
@@ -42,8 +43,8 @@ $(function() {
                     email: email,
                     phone: phone,
                     address1: address1,
-                    address2: Address2,
-                    City: city,
+                    address2: address2,
+                    city: city,
                     postcode: postcode,
                     p1name: p1name,
                     p1phone: p1phone,
