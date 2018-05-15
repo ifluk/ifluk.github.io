@@ -34,7 +34,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "//formspree.io/info@indoorfootballleague.co.uk",
+                url: "https://formspree.io/info@indoorfootballleague.co.uk",
                 type: "POST",
                 data: {
                     teamname: teamname,
